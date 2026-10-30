@@ -1,7 +1,19 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AutoAutoAuto by BP</title>
+<meta name="description" content="AutoAutoAuto by BP — jedna sieć, jedna aplikacja.">
+<meta name="theme-color" content="#040705">
+<meta property="og:title" content="AutoAutoAuto by BP">
+<meta property="og:description" content="Jedna sieć. Jedna aplikacja.">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/helios.png">
+</head>
+<body>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="fonts.css">
 <style>
   /* Full-bleed stage. Ambient light drifts behind; each slide choreographs its own reveal. */
   :root {
@@ -136,6 +148,30 @@
   .tile .t { font-family: var(--display); font-weight: 700; font-size: 1.05rem; letter-spacing: -.02em; }
   .tile .d { font-size: .83rem; color: var(--faint); line-height: 1.45; }
 
+  /* highlighted proposition band */
+  .callout { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px 16px;
+             border: 1px solid var(--edge); border-radius: 14px; padding: 14px 18px;
+             background: linear-gradient(90deg, rgba(153,204,0,.1), rgba(153,204,0,.02)); }
+  .callout .badge { font-family: var(--mono); font-size: .6rem; letter-spacing: .17em;
+                    text-transform: uppercase; color: #06100A; background: var(--lime);
+                    padding: 4px 10px; border-radius: 999px; white-space: nowrap;
+                    box-shadow: 0 0 22px rgba(153,204,0,.4) }
+  .callout .t { font-family: var(--display); font-weight: 700; font-size: 1.04rem; letter-spacing: -.02em }
+  .callout .d { font-size: .87rem; color: var(--dim); flex: 1 1 280px; min-width: 0 }
+
+  /* price block */
+  .price { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap }
+  .price .amt { font-family: var(--display); font-weight: 800; font-size: clamp(2.6rem,6vw,4.1rem);
+                line-height: .92; letter-spacing: -.045em; color: var(--lime);
+                text-shadow: 0 0 52px rgba(153,204,0,.4) }
+  .price .per { font-size: .95rem; color: var(--dim); max-width: 18ch }
+  .pill { display: inline-flex; align-self: flex-start; font-family: var(--mono); font-size: .64rem;
+          letter-spacing: .16em; text-transform: uppercase; color: var(--lime);
+          border: 1px solid var(--edge); border-radius: 999px; padding: 7px 14px }
+  .incl { padding: 22px 24px; display: flex; flex-direction: column; gap: 13px; min-width: 0 }
+  .incl .hd { font-family: var(--mono); font-size: .62rem; letter-spacing: .17em;
+              text-transform: uppercase; color: var(--lime) }
+
   ul.ticks { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
   ul.ticks li { display: grid; grid-template-columns: 14px minmax(0,1fr); gap: 13px; font-size: .96rem; align-items: start; }
   ul.ticks li::before { content: ""; width: 7px; height: 7px; margin-top: 8px; border-radius: 50%;
@@ -235,14 +271,14 @@
     .nav { padding-top: 3px; padding-bottom: max(6px, env(safe-area-inset-bottom,0px)); gap: 10px }
     .arrows button { width: 34px; height: 30px; font-size: .85rem }
     .count { font-size: .62rem } .dots button { width: 5px; height: 5px }
-    .slide { padding-left: max(18px, env(safe-area-inset-left,0px));
+    .slide { padding-top: 0; padding-left: max(18px, env(safe-area-inset-left,0px));
              padding-right: max(18px, env(safe-area-inset-right,0px)); padding-bottom: 8px }
-    .inner { gap: 13px }
+    .inner { gap: 11px }
     h1 { font-size: clamp(1.7rem, 5.6vw, 2.9rem) }
     h2 { font-size: clamp(1.15rem, 3.2vw, 1.8rem) }
     .lede { font-size: .82rem; max-width: 44ch }
     .eyebrow { font-size: .56rem } .eyebrow::before { width: 17px }
-    ul.ticks { gap: 7px } ul.ticks li { font-size: .76rem; grid-template-columns: 11px minmax(0,1fr); gap: 9px }
+    ul.ticks { gap: 6px } ul.ticks li { font-size: .76rem; grid-template-columns: 11px minmax(0,1fr); gap: 9px }
     ul.ticks li::before { width: 5px; height: 5px; margin-top: 6px }
     .split { gap: 20px }
     .phone { max-width: 114px } .phone.sm { max-width: 98px } .duo { gap: 10px }
@@ -256,7 +292,7 @@
     .assume { font-size: .62rem }
     .bleed .lay { gap: 8px; padding: 14px } .bleed img { max-height: 42vh; object-fit: cover }
     /* a 3-panel dashboard cannot be legible at 393px tall: show the two that carry the story */
-    .dash { max-width: 520px; gap: 7px }
+    .dash { max-width: 500px; gap: 6px }
     .dash img:nth-of-type(2), .dash .cap2 { display: none }
     .slide.console h2 { font-size: clamp(1.15rem, 3.2vw, 1.7rem) }
     .qr { width: 68px; height: 68px; padding: 4px; border-radius: 8px }
@@ -264,6 +300,13 @@
     .cta { padding: 9px 17px; font-size: .82rem } .u { font-size: .66rem }
     .qrbox { gap: 14px }
     .player { gap: 9px } .track { max-width: 118px } .stagelbl { font-size: .6rem }
+    .callout { padding: 9px 12px; gap: 5px 11px; border-radius: 11px }
+    .callout .t { font-size: .84rem } .callout .d { font-size: .7rem; flex-basis: 200px }
+    .callout .badge { font-size: .52rem; padding: 3px 8px }
+    .price .amt { font-size: 2rem } .price .per { font-size: .72rem }
+    .pill { font-size: .56rem; padding: 5px 11px }
+    .incl { padding: 12px 14px; gap: 7px }
+    .incl .hd { font-size: .54rem } .incl ul.ticks { gap: 5px }
   }
 
   @media print {
@@ -293,7 +336,7 @@
       background: url("img/helios.png") center / contain no-repeat;
     }
     .slide::after {
-      content: "AutoAutoAuto by BP  ·  " counter(pg) " / 10";
+      content: "AutoAutoAuto by BP  ·  " counter(pg) " / 11";
       position: absolute; left: 17mm; bottom: 8mm; z-index: 2;
       font-family: var(--mono); font-size: 6.5pt; letter-spacing: .2em;
       text-transform: uppercase; color: var(--faint);
@@ -308,6 +351,11 @@
     .duo { gap: 8mm }
     .glass { backdrop-filter: none; background: rgba(255,255,255,.055); border-color: rgba(153,204,0,.17) }
     .tile { padding: 5mm 5mm 6mm; gap: 2mm }
+    .callout { padding: 4mm 5mm; gap: 2mm 4mm }
+    .callout .t { font-size: 10pt } .callout .d { font-size: 8pt } .callout .badge { font-size: 6pt }
+    .price .amt { font-size: 30pt } .price .per { font-size: 8.5pt }
+    .pill { font-size: 6.5pt; padding: 2mm 4mm }
+    .incl { padding: 6mm } .incl .hd { font-size: 6pt } .incl ul.ticks { gap: 2.5mm }
     .calc { padding: 7mm; gap: 4mm }
     input[type=range] { height: 4mm }
     .cta { box-shadow: none; padding: 4mm 7mm }
@@ -418,6 +466,11 @@
             <p class="lede" style="max-width:42ch" data-pl="Kamera przy wjeździe czyta numer rejestracyjny, model, rozmiar i kolor auta. Program kupiony na małe auto nie uruchomi się dla SUV-a, a abonament jednego kierowcy nie obsłuży trzech samochodów." data-en="A camera at the entry reads the plate, model, size and colour. A programme bought for a small car won't run for an SUV, and one driver's subscription won't wash three cars.">Kamera przy wjeździe czyta numer rejestracyjny, model, rozmiar i kolor auta. Program kupiony na małe auto nie uruchomi się dla SUV-a, a abonament jednego kierowcy nie obsłuży trzech samochodów.</p>
           </span>
         </div>
+        <div class="callout r">
+          <span class="badge" data-pl="Specjalna opcja dla BP" data-en="Special option for BP">Specjalna opcja dla BP</span>
+          <span class="t">Pay by Plate — AutoStart</span>
+          <span class="d" data-pl="Kierowca z wykupionym abonamentem uruchamia mycie samą tablicą rejestracyjną — nawet bez aplikacji w telefonie." data-en="A driver with a subscription starts the wash on the plate alone — with no app on the phone at all.">Kierowca z wykupionym abonamentem uruchamia mycie samą tablicą rejestracyjną — nawet bez aplikacji w telefonie.</span>
+        </div>
         <ul class="ticks r" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px 34px">
           <li><span><b data-pl="Tablica zamiast telefonu." data-en="Plate instead of phone.">Tablica zamiast telefonu.</b> <span data-pl="Abonament przypisany do auta, rozpoznawany przy bramie." data-en="The subscription is bound to the car and recognised at the gate.">Abonament przypisany do auta, rozpoznawany przy bramie.</span></span></li>
           <li><span><b data-pl="Integracja z CEPIK." data-en="CEPIK integration.">Integracja z CEPIK.</b> <span data-pl="TAXI i Uber oddzielone od detalu — z własnym cennikiem." data-en="Taxi and Uber separated from retail, on their own tariff.">TAXI i Uber oddzielone od detalu — z własnym cennikiem.</span></span></li>
@@ -438,6 +491,7 @@
               <li><span><b data-pl="Jedno mycie dziennie." data-en="One wash a day.">Jedno mycie dziennie.</b> <span data-pl="Przypisane do tablicy, nie do telefonu." data-en="Bound to the plate, not the phone.">Przypisane do tablicy, nie do telefonu.</span></span></li>
               <li><span><b data-pl="Plany na dni robocze." data-en="Weekday plans.">Plany na dni robocze.</b> <span data-pl="Wypełniają tę połowę tygodnia, w której myjnia stoi pusta." data-en="They fill the half of the week when the wash stands empty.">Wypełniają tę połowę tygodnia, w której myjnia stoi pusta.</span></span></li>
               <li><span><b data-pl="Kody promocyjne." data-en="Promo codes.">Kody promocyjne.</b> <span data-pl="Rabat na abonament, doładowanie gratis, zniżka na kolejne." data-en="Money off a plan, a free top-up, a discount on the next ones.">Rabat na abonament, doładowanie gratis, zniżka na kolejne.</span></span></li>
+              <li><span><b data-pl="Pełna konfigurowalność zasad abonamentu." data-en="Subscription rules fully configurable.">Pełna konfigurowalność zasad abonamentu.</b> <span data-pl="Programy, dni, godziny, limity myć i stacje — wszystko po waszej stronie." data-en="Programmes, days, hours, wash limits and sites — all on your side.">Programy, dni, godziny, limity myć i stacje — wszystko po waszej stronie.</span></span></li>
             </ul>
           </div>
           <div class="r"><div class="phone tilt"><span><img src="img/sub.jpg" alt=""></span></div></div>
@@ -527,6 +581,36 @@
     </section>
 
     <!-- 10 ─ close -->
+    <!-- 10 ─ commercial model -->
+    <section class="slide">
+      <div class="inner">
+        <div class="split top">
+          <div class="copy">
+            <span class="eyebrow r" data-pl="Model współpracy" data-en="Commercial model">Model współpracy</span>
+            <h2 class="r" data-pl="Zero CAPEX.<br>Tylko OPEX." data-en="Zero capex.<br>OPEX only.">Zero CAPEX.<br>Tylko OPEX.</h2>
+            <p class="lede r" data-pl="To my instalujemy całą infrastrukturę — sprzęt, oprogramowanie i niezależne łącza internetowe. Po waszej stronie nie ma nakładów inwestycyjnych." data-en="We install the entire infrastructure — hardware, software and independent internet connectivity. There is no capital outlay on your side.">To my instalujemy całą infrastrukturę — sprzęt, oprogramowanie i niezależne łącza internetowe. Po waszej stronie nie ma nakładów inwestycyjnych.</p>
+            <span class="price r">
+              <span class="amt">150 EUR</span>
+              <span class="per" data-pl="miesięcznie, od jednej lokalizacji" data-en="per month, per location">miesięcznie, od jednej lokalizacji</span>
+            </span>
+            <span class="pill r" data-pl="Brak opłat wstępnych" data-en="No upfront fees">Brak opłat wstępnych</span>
+          </div>
+          <div class="glass incl r">
+            <span class="hd" data-pl="W tym" data-en="Included">W tym</span>
+            <ul class="ticks">
+              <li><span data-pl="Kompletna infrastruktura hardware i software" data-en="Complete hardware and software infrastructure">Kompletna infrastruktura hardware i software</span></li>
+              <li><span data-pl="Łączność internetowa" data-en="Internet connectivity">Łączność internetowa</span></li>
+              <li><span data-pl="Instalacja" data-en="Installation">Instalacja</span></li>
+              <li><span data-pl="Opieka serwisowa" data-en="Service and support">Opieka serwisowa</span></li>
+              <li><span data-pl="Opłacanie transakcji" data-en="Transaction processing">Opłacanie transakcji</span></li>
+              <li><span data-pl="Fiskalizacja" data-en="Fiscalisation">Fiskalizacja</span></li>
+              <li><span data-pl="KSeF" data-en="KSeF — national e-invoicing">KSeF</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="slide end">
       <div class="inner">
         <span class="eyebrow r" data-pl="Od dziś" data-en="From today">Od dziś</span>
@@ -702,4 +786,5 @@
 })();
 </script>
 
-</body></html>
+</body>
+</html>
