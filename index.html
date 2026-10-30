@@ -216,6 +216,16 @@
          text-decoration: none; padding: 15px 26px; border-radius: 999px;
          box-shadow: 0 0 44px rgba(153,204,0,.4); transition: .25s; }
   .cta:hover { background: var(--yellow); box-shadow: 0 0 60px rgba(255,255,0,.55); transform: translateY(-2px) }
+  /* deck downloads — secondary to the app CTA, and never printed */
+  .dl { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px }
+  .dl .lbl { width: 100%; font-size: .78rem; color: var(--faint) }
+  .dl a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+          font-size: .82rem; font-weight: 600; color: var(--dim);
+          border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 10px 18px;
+          transition: color .2s, border-color .2s, box-shadow .2s }
+  .dl a:hover { color: var(--ink); border-color: var(--lime); box-shadow: 0 0 26px rgba(153,204,0,.22) }
+  .dl svg { width: 14px; height: 14px; flex: none }
+
   .qrbox { display: flex; align-items: center; gap: 22px; flex-wrap: wrap }
   .qr { width: 112px; height: 112px; border-radius: 12px; flex: none; padding: 7px; background: #fff }
   .qr.sm { width: 76px; height: 76px; padding: 5px; border-radius: 9px }
@@ -299,6 +309,9 @@
     .qr.sm { width: 52px; height: 52px; padding: 3px }
     .cta { padding: 9px 17px; font-size: .82rem } .u { font-size: .66rem }
     .qrbox { gap: 14px }
+    .dl { gap: 7px } .dl .lbl { font-size: .62rem }
+    .dl a { font-size: .68rem; padding: 6px 12px; gap: 6px }
+    .dl svg { width: 11px; height: 11px }
     .player { gap: 9px } .track { max-width: 118px } .stagelbl { font-size: .6rem }
     .callout { padding: 9px 12px; gap: 5px 11px; border-radius: 11px }
     .callout .t { font-size: .84rem } .callout .d { font-size: .7rem; flex-basis: 200px }
@@ -313,7 +326,7 @@
     @page { size: A4 landscape; margin: 0 }
     html, body { height: auto; overflow: visible; background: #040705 }
     *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important }
-    .bar, .nav, .lang, .prog, .aura, .grain, .mark-bg { display: none !important }
+    .bar, .nav, .lang, .prog, .aura, .grain, .mark-bg, .dl { display: none !important }
     .deck { display: block } .stage { position: static }
     body { counter-reset: pg }
 
@@ -620,6 +633,17 @@
           <a class="cta" href="https://cwg-demo-bp.pages.dev/" target="_blank" rel="noopener" data-pl="Otwórz aplikację" data-en="Open the app">Otwórz aplikację</a>
           <svg class="qr sm" viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg" aria-label="QR"><path d="" fill="#040705"></path></svg>
           <span class="u">autoautoauto.app</span>
+        </span>
+        <span class="dl r">
+          <span class="lbl" data-pl="Pobierz prezentację" data-en="Download the deck">Pobierz prezentację</span>
+          <a href="AutoAutoAuto-BP-PL.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M4 21h16"></path></svg>
+            PDF — polski
+          </a>
+          <a href="AutoAutoAuto-BP-EN.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M4 21h16"></path></svg>
+            PDF — English
+          </a>
         </span>
       </div>
     </section>
